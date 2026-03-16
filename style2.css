@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  background-color: rgb(228, 228, 228);
+  color: white;
+  min-height: 100vh;
+}
+
+.custom-box {
+  background-color: #303030;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.custom-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/*NAVBAR STYLE INE*/
+
+.custom-navbar {
+  background-color: black;
+  position: fixed;
+}
+
+/* logo */
+.navbar-brand {
+  color: white !important;
+}
+
+/* menu links */
+.nav-link {
+  color: white !important;
+}
+
+/* hover effect */
+.nav-link:hover {
+  color: #f75555 !important;
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.btn-search {
+  color: red !important;
+  border-color: red !important;
+}
+
+.btn-search:hover {
+  background-color: rgb(199, 5, 5) !important;
+  color: white !important;
+  border-color: red !important;
+}
+
+/*grid*/
+
+.col {
+  border: solid 1px black;
+  background-color: #d60a0a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1%;
+  width: auto;
+
+  color: black;
+  gap: 8px;
+}
+
+.col img {
+  width: 150px;
+  transition: 0.4s;
+}
+
+.col img:hover {
+  width: 170px;
+}
+
+.container {
+  padding: 2%;
+}
+
+.col button {
+  background-color: black;
+  color: white;
+  padding: 3px;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.col button:hover {
+  background-color: rgba(0, 0, 0, 0.653);
+}

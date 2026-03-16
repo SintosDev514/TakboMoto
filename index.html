@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TakboMoto</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="NavStyle">
+      <div>
+        <img src="./images/logo.png" alt="logo" class="logo" />
+      </div>
+      <nav>
+        <a href="#background">Home</a>
+        <a href="#background2">Partners</a>
+
+        <a href="./pages/contact.php">Contact</a>
+        <a href="./pages/services.html">Services</a>
+      </nav>
+      <div>
+        <button id="aboutToggle">About</button>
+        <button id="LoginToggle">Login</button>
+        <button id="SignUpToggle">Sign Up</button>
+      </div>
+    </div>
+
+    <div id="background">
+      <section id="HOME">
+        <section id="HOME2">
+          <div class="Sign-Up">
+            <h1>Sign Up</h1>
+            <form id="signupForm" action="signup.php" method="POST">
+              <label for="fullname">Full Name:</label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Enter your full name"
+                required
+              />
+
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+
+              <label for="phone">Phone:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+
+              <label for="address">Address:</label>
+              <textarea
+                id="address"
+                name="address"
+                placeholder="Enter your address"
+                rows="3"
+                required
+              ></textarea>
+
+              <label for="role">I am a:</label>
+              <select id="role" name="role" required>
+                <option value="buyer">Buyer</option>
+                <option value="seller">Seller</option>
+              </select>
+
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+
+              <label for="confirmPassword">Confirm Password:</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                required
+              />
+
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="about2">
+          <button id="xbutton">X</button>
+          <div class="card" id="card1">
+            <header>
+              <h1>TAKBO<span class="moto-white">MOTO</span></h1>
+              <p>Your Partner in Digital Innovation</p>
+              <p>
+                Connecting riders, enthusiasts, and trusted sellers in one
+                seamless platform.
+              </p>
+              <p>
+                Driven by passion for motorcycles, powered by smart technology.
+              </p>
+            </header>
+
+            <article>
+              <h3>Our <span class="moto-white">Goals</span></h3>
+              <p>
+                <strong><span class="moto-white">Vision:</span></strong> To be a
+                leading motorcycle ride buy-and-sell platform.
+              </p>
+              <p>
+                <strong><span class="moto-white">Mission:</span></strong> To
+                connect riders and sellers through a reliable, user-friendly
+                marketplace.
+              </p>
+              <p>
+                <strong><span class="moto-white">Commitment:</span></strong>
+                To deliver a secure, transparent, and efficient experience for
+                every user.
+              </p>
+              <p>
+                <strong><span class="moto-white">Objective:</span></strong> To
+                simplify motorcycle transactions and build a trusted community
+                for buyers and sellers.
+              </p>
+            </article>
+          </div>
+        </section>
+        <div class="card">
+          <img
+            id="logo3"
+            src="./images/logo.png"
+            alt="logo"
+            class="logoblack"
+          />
+        </div>
+        <div class="card1">
+          <p>
+            TAKBO<span class="moto-white">MOTO</span> RIDE BUY AND SELL is a
+            motorcycle-focused platform dedicated to connecting buyers and
+            sellers in one convenient marketplace. We provide a seamless and
+            reliable space where users can explore, list, and trade motorcycles
+            with ease. Our goal is to simplify the buying and selling process by
+            offering a user-friendly, efficient, and trustworthy experience for
+            every rider and enthusiast.
+          </p>
+        </div>
+      </section>
+    </div>
+    <section id="background2">
+      <div id="holder">
+        <div id="lgs2">
+          <h2>Partners</h2>
+          <div id="lgs">
+            <img src="./images/lg1.png" />
+            <img src="./images/lg2.png" />
+            <img src="./images/lg3.png" />
+            <img src="./images/lg5.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 TakboMoto. All rights reserved.</p>
+
+      <p>Created By Roberto Sintos BSIT-3B.</p>
+    </footer>
+
+    <script src="navscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - TakboMoto</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="NavStyle">
+      <div>
+        <img src="./images/logo.png" alt="logo" class="logo" />
+      </div>
+      <nav>
+        <a href="index.html#background">Home</a>
+        <a href="index.html#background2">Partners</a>
+        <a href="./pages/contact.php">Contact</a>
+        <a href="./pages/services.html">Services</a>
+      </nav>
+      <div>
+        <button id="aboutToggle">About</button>
+        <button id="LoginToggle">Login</button>
+        <button id="SignUpToggle">Sign Up</button>
+      </div>
+    </div>
+
+    <main class="authPage">
+      <div id="loginSection" class="Sign-Up">
+        <div style="text-align: center; margin-bottom: 20px">
+          <img
+            src="./images/logo.png"
+            alt="TakboMoto Logo"
+            style="width: 80px; height: auto"
+          />
+          <h1 style="margin: 10px 0">Welcome Back</h1>
+          <p style="color: #666; font-size: 14px">Sign in to your account</p>
+        </div>
+        <form id="loginForm" action="login.php" method="POST">
+          <label for="loginEmail">Email:</label>
+          <input
+            type="email"
+            id="loginEmail"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="loginPassword">Password:</label>
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit">Login</button>
+        </form>
+        <div style="text-align: center; margin-top: 20px">
+          <p style="font-size: 14px; color: #666">
+            Don't have an account?
+            <a
+              href="#signupSection"
+              id="showSignupLink"
+              style="color: #f30501; text-decoration: none"
+              >Sign Up</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div id="signupSection" class="Sign-Up" style="display: none">
+        <div style="text-align: center; margin-bottom: 20px">
+          <h1 style="margin: 10px 0">Create an Account</h1>
+          <p style="color: #666; font-size: 14px">
+            Sign up as a buyer or seller to start using TakboMoto.
+          </p>
+        </div>
+        <form id="signupForm" action="signup.php" method="POST">
+          <label for="fullname">Full Name:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="phone">Phone:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+
+          <label for="address">Address:</label>
+          <textarea
+            id="address"
+            name="address"
+            placeholder="Enter your address"
+            rows="3"
+            required
+          ></textarea>
+
+          <label for="role">I am a:</label>
+          <select id="role" name="role" required>
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+          </select>
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+            required
+          />
+
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px">
+          <p style="font-size: 14px; color: #666">
+            Already have an account?
+            <a
+              href="#loginSection"
+              id="showLoginLink"
+              style="color: #f30501; text-decoration: none"
+              >Log In</a
+            >
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="navscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
