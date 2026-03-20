@@ -24,7 +24,11 @@ main {
 }
 
 .authPage {
-  min-height: 100vh;
+  padding-top: 9%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: auto;
   position: relative;
   background: linear-gradient(135deg, #070707 0%, #111 50%, #070707 100%);
 }
@@ -333,6 +337,10 @@ h2 {
 
 /* Mobile */
 @media (max-width: 480px) {
+  .authPage {
+    padding-top: 50%;
+  }
+
   .NavStyle {
     flex-direction: column;
     padding: 10px;
@@ -543,10 +551,6 @@ h2 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
   color: #333;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .Sign-Up h1 {

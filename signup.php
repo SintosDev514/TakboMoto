@@ -3,11 +3,11 @@
 session_start();
 include "db.php";
 
+var_dump($_POST);
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fullname = trim($_POST["fullname"] ?? "");
     $email = trim($_POST["email"] ?? "");
-    $phone = trim($_POST["phone"] ?? "");
-    $address = trim($_POST["address"] ?? "");
     $role = trim($_POST["role"] ?? "buyer");
     $password = $_POST["password"] ?? "";
     $confirmPassword = $_POST["confirmPassword"] ?? "";
@@ -15,8 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (
         $fullname === "" ||
         $email === "" ||
-        $phone === "" ||
-        $address === "" ||
         $role === "" ||
         $password === "" ||
         $confirmPassword === ""
@@ -41,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Prevent duplicate user
-    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();

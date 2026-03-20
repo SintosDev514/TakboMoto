@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - TakboMoto</title>
+    <title>Sign Up - TakboMoto</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -20,48 +20,74 @@
       <div>
         <button id="aboutToggle">About</button>
         <button id="LoginToggle">Login</button>
+        <button id="SignUpToggle">Sign Up</button>
       </div>
     </div>
 
     <main class="authPage">
-      <div id="loginSection" class="Sign-Up">
+      <div id="signupSection" class="Sign-Up">
         <div style="text-align: center; margin-bottom: 20px">
           <img
             src="./images/logo.png"
             alt="TakboMoto Logo"
             style="width: 80px; height: auto"
           />
-          <h1 style="margin: 10px 0">Welcome Back</h1>
-          <p style="color: #666; font-size: 14px">Sign in to your account</p>
+          <h1 style="margin: 10px 0">Create an Account</h1>
+          <p style="color: #666; font-size: 14px">
+            Sign up as a buyer or seller to start using TakboMoto.
+          </p>
         </div>
-        <form id="loginForm" action="login.php" method="POST">
-          <label for="loginEmail">Email:</label>
+        <form id="signupForm" action="signup.php" method="POST">
+          <label for="fullname">Full Name:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <label for="email">Email:</label>
           <input
             type="email"
-            id="loginEmail"
+            id="email"
             name="email"
             placeholder="Enter your email"
             required
           />
 
-          <label for="loginPassword">Password:</label>
+          <label for="role">I am a:</label>
+          <select id="role" name="role" required>
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+          </select>
+
+          <label for="password">Password:</label>
           <input
             type="password"
-            id="loginPassword"
+            id="password"
             name="password"
             placeholder="Enter your password"
             required
           />
 
-          <button type="submit">Login</button>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+            required
+          />
+
+          <button type="submit">Sign Up</button>
         </form>
+
         <div style="text-align: center; margin-top: 20px">
           <p style="font-size: 14px; color: #666">
-            Don't have an account?
-            <a
-              href="./signup.html"
-              style="color: #f30501; text-decoration: none"
-              >Sign Up</a
+            Already have an account?
+            <a href="login.html" style="color: #f30501; text-decoration: none"
+              >Log In</a
             >
           </p>
         </div>
@@ -69,6 +95,5 @@
     </main>
 
     <script src="navscript.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>

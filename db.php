@@ -5,40 +5,38 @@ $user = "root";
 $password = "";
 $database = "TakboMoto_DB";
 
+// Connect to the database
 $conn = mysqli_connect($host, $user, $password, $database);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Ensure necessary tables exist (matches requested schema)
+// Ensure the users table exists with correct schema
 $createUsersTableSql = "CREATE TABLE IF NOT EXISTS users (
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100) UNIQUE,
     password VARCHAR(255),
-    phone VARCHAR(20),
-    address TEXT,
     role ENUM('buyer','seller') DEFAULT 'buyer',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
 
-$conn->query($createUsersTableSql);
+if (!$conn->query($createUsersTableSql)) {
+    die("Error creating users table: " . $conn->error);
+}
 
-// Ensure existing installs have the required columns/column names
-// (this is safe and idempotent; SQL will be skipped if the column already exists).
+// Ensure additional columns exist (safe for future updates)
 $alterStatements = [
-    "ALTER TABLE users CHANGE COLUMN id user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
-    "ALTER TABLE users CHANGE COLUMN fullname name VARCHAR(100)",
-    "ALTER TABLE users CHANGE COLUMN password_hash password VARCHAR(255)",
-    "ALTER TABLE users ADD COLUMN IF NOT EXISTS phone VARCHAR(20) AFTER password",
-    "ALTER TABLE users ADD COLUMN IF NOT EXISTS address TEXT AFTER phone",
+    
     "ALTER TABLE users ADD COLUMN IF NOT EXISTS role ENUM('buyer','seller') DEFAULT 'buyer' AFTER address"
 ];
 
 foreach ($alterStatements as $sql) {
-    // Suppress errors if the column/rename has already been applied
-    @$conn->query($sql);
+    if (!$conn->query($sql)) {
+        // Only show warnings, don’t stop execution
+        echo "Warning: " . $conn->error . "<br>";
+    }
 }
 
 ?>

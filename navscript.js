@@ -7,7 +7,6 @@ const aboutSection =
 const closebtn = document.getElementById("xbutton");
 const signUpToggle = document.getElementById("SignUpToggle");
 const loginToggle = document.getElementById("LoginToggle");
-const signUpFormContainer = document.getElementById("HOME2");
 
 if (aboutToggle && aboutSection) {
   aboutToggle.addEventListener("click", () => {
@@ -31,18 +30,11 @@ if (closebtn && aboutSection) {
 
 if (signUpToggle) {
   signUpToggle.addEventListener("click", () => {
-    if (window.location.pathname.endsWith("index.html")) {
-      // On index.html, toggle the sign-up form
-      if (signUpFormContainer) {
-        signUpFormContainer.classList.toggle("show");
-      }
-    } else {
-      // On other pages, navigate to index.html#HOME2
-      const indexPath = window.location.pathname.includes("/pages/")
-        ? "../index.html"
-        : "index.html";
-      window.location.href = `${indexPath}#HOME2`;
-    }
+    // Navigate to the dedicated sign-up page
+    const signupPath = window.location.pathname.includes("/pages/")
+      ? "../signup.html"
+      : "signup.html";
+    window.location.href = signupPath;
   });
 }
 
@@ -54,9 +46,4 @@ if (loginToggle) {
       : "login.html";
     window.location.href = loginPath;
   });
-}
-
-// If the user arrives with a hash pointing to the sign-up section, show it.
-if (window.location.hash === "#HOME2" && signUpFormContainer) {
-  signUpFormContainer.classList.add("show");
 }
